@@ -6,13 +6,13 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Pro-Visual Media, Akure" },
+      { title: "Contact — Kingsprem Digital, Akure" },
       {
         name: "description",
         content:
-          "Contact Pro-Visual Media in Akure, Ondo State. Get a free quote, or reach us by phone, email, or WhatsApp.",
+          "Contact Kingsprem Digital in Akure, Ondo State. Get a free quote, or reach us by phone, email, or WhatsApp.",
       },
-      { property: "og:title", content: "Contact — Pro-Visual Media" },
+      { property: "og:title", content: "Contact — Kingsprem Digital" },
       {
         property: "og:description",
         content: "Get in touch to start a project or request a quote.",

@@ -2,12 +2,12 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-neutral-900 px-6 pt-20 pb-10 text-white">
+    <footer className="bg-ink px-6 pt-20 pb-10 text-white">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="mb-6 font-display text-4xl tracking-tighter">
-              PRO&#8209;VISUAL
+              KINGSPREM DIGITAL
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/60">
               We provide professional web design, branding, photography,
@@ -116,7 +116,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-10 md:flex-row">
           <div className="font-mono text-[10px] uppercase tracking-widest text-white/40">
-            © 2026 Pro-Visual Media. All rights reserved. — Akure, Nigeria
+            © 2026 Kingsprem Digital. All rights reserved. — Akure, Nigeria
           </div>
           <div className="flex items-center gap-3">
             <div className="size-2 animate-pulse rounded-full bg-accent" />

@@ -14,13 +14,13 @@ import svcGraphic from "../assets/service-graphic.jpg";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Pro-Visual Media" },
+      { title: "Portfolio — Kingsprem Digital" },
       {
         name: "description",
         content:
-          "Selected work from the Pro-Visual studio: web design, branding, live streaming, photography, and film across Nigeria.",
+          "Selected work from the Kingsprem Digital studio: web design, branding, live streaming, photography, and film across Nigeria.",
       },
-      { property: "og:title", content: "Portfolio — Pro-Visual Media" },
+      { property: "og:title", content: "Portfolio — Kingsprem Digital" },
       {
         property: "og:description",
         content: "A gallery of recent projects from our Akure studio.",

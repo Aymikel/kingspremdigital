@@ -9,13 +9,13 @@ import svcVideo from "../assets/service-video.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Pro-Visual Media" },
+      { title: "Services — Kingsprem Digital" },
       {
         name: "description",
         content:
           "Web design, graphic design, live streaming, photography, videography, and media equipment rental in Akure and across Nigeria.",
       },
-      { property: "og:title", content: "Services — Pro-Visual Media" },
+      { property: "og:title", content: "Services — Kingsprem Digital" },
       {
         property: "og:description",
         content:

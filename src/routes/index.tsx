@@ -135,7 +135,7 @@ function Index() {
         <div className="animate-reveal mt-20 [animation-delay:200ms]">
           <img
             src={heroImg}
-            alt="Pro-Visual media crew filming with a cinema camera in the Akure studio"
+            alt="Kingsprem Digital media crew filming with a cinema camera in the Akure studio"
             width={1600}
             height={900}
             className="aspect-video w-full rounded-sm object-cover outline outline-black/5"
