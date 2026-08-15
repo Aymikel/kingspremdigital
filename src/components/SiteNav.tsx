@@ -19,10 +19,18 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           to="/"
-          className="font-display text-3xl tracking-tighter text-foreground"
+          className="flex items-center gap-3 text-foreground"
         >
-          KINGSPREM DIGITAL
+          <img
+            src={kdLogo.url}
+            alt="Kingsprem Digital logo"
+            className="h-9 w-auto"
+          />
+          <span className="font-display text-2xl font-bold tracking-tight">
+            KINGSPREM DIGITAL
+          </span>
         </Link>
+
 
         <div className="hidden gap-8 text-sm font-medium uppercase tracking-widest md:flex">
           {NAV.map((item) => (
