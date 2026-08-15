@@ -50,37 +50,37 @@
 :root {
   --radius: 0.25rem;
 
-  /* Editorial cream + ink + orange accent */
-  --background: oklch(0.975 0.015 85);
-  --foreground: oklch(0.16 0 0);
+  /* Kingsprem Digital — navy, royal blue, gold */
+  --background: #f7f9fc;
+  --foreground: #0b1f3a;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0 0);
+  --card: #ffffff;
+  --card-foreground: #0b1f3a;
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0 0);
+  --popover: #ffffff;
+  --popover-foreground: #0b1f3a;
 
-  --primary: oklch(0.16 0 0);
-  --primary-foreground: oklch(0.975 0.015 85);
+  --primary: #1746a2;
+  --primary-foreground: #ffffff;
 
-  --secondary: oklch(0.94 0.01 85);
-  --secondary-foreground: oklch(0.16 0 0);
+  --secondary: #e7edf7;
+  --secondary-foreground: #0b1f3a;
 
-  --muted: oklch(0.94 0.01 85);
-  --muted-foreground: oklch(0.45 0.02 40);
+  --muted: #e7edf7;
+  --muted-foreground: #4a5c75;
 
-  --accent: oklch(0.66 0.19 38);
-  --accent-foreground: oklch(1 0 0);
+  --accent: #d4a72c;
+  --accent-foreground: #0b1f3a;
 
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0.003 247);
+  --destructive-foreground: #ffffff;
 
-  --border: oklch(0.16 0 0 / 0.08);
-  --input: oklch(0.16 0 0 / 0.12);
-  --ring: oklch(0.66 0.19 38);
+  --border: rgb(11 31 58 / 0.1);
+  --input: rgb(11 31 58 / 0.15);
+  --ring: #1746a2;
 
-  --ink: oklch(0.16 0 0);
-  --ink-foreground: oklch(0.98 0.015 85);
+  --ink: #0b1f3a;
+  --ink-foreground: #f2f6fc;
 }
 
 @keyframes reveal-up {
@@ -97,6 +97,7 @@
 .animate-reveal {
   animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
 
 @layer base {
   * {
