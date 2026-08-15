@@ -91,18 +91,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           title:
-            "Pro-Visual Media — Creative Media Agency in Akure, Nigeria",
+            "Kingsprem Digital — Creative Media Agency in Akure, Nigeria",
         },
         {
           name: "description",
           content:
             "Creative media solutions in Akure, Ondo State: web design, branding, live streaming, photography, videography, and equipment rental for businesses, churches, and organizations.",
         },
-        { name: "author", content: "Pro-Visual Media" },
+        { name: "author", content: "Kingsprem Digital" },
         {
           property: "og:title",
           content:
-            "Pro-Visual Media — Creative Media Agency in Akure, Nigeria",
+            "Kingsprem Digital — Creative Media Agency in Akure, Nigeria",
         },
         {
           property: "og:description",
@@ -110,9 +110,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Creative media solutions in Akure, Ondo State: web design, branding, live streaming, photography, videography, and equipment rental for businesses, churches, and organizations.",
         },
         { property: "og:type", content: "website" },
-        { property: "og:site_name", content: "Pro-Visual Media" },
+        { property: "og:site_name", content: "Kingsprem Digital" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "Pro-Visual Media — Creative Media Agency in Akure, Nigeria" },
+        { name: "twitter:title", content: "Kingsprem Digital — Creative Media Agency in Akure, Nigeria" },
         { name: "twitter:description", content: "Creative media solutions in Akure, Ondo State: web design, branding, live streaming, photography, videography, and equipment rental for businesses, churches, and organizations." },
         { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/dd305cb4-0cc5-41f6-9d5c-1c7948ccb09a/id-preview-738f3ef7--52c3a8f1-f5e6-4b0b-b539-fe89b9936a96.lovable.app-1784038883581.png" },
         { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/dd305cb4-0cc5-41f6-9d5c-1c7948ccb09a/id-preview-738f3ef7--52c3a8f1-f5e6-4b0b-b539-fe89b9936a96.lovable.app-1784038883581.png" },
@@ -128,7 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
         },
       ],
     }),

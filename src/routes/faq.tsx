@@ -30,13 +30,13 @@ const FAQS = [
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Pro-Visual Media" },
+      { title: "FAQ — Kingsprem Digital" },
       {
         name: "description",
         content:
-          "Answers to common questions about working with Pro-Visual Media: pricing, timelines, deliverables, and more.",
+          "Answers to common questions about working with Kingsprem Digital: pricing, timelines, deliverables, and more.",
       },
-      { property: "og:title", content: "FAQ — Pro-Visual Media" },
+      { property: "og:title", content: "FAQ — Kingsprem Digital" },
       { property: "og:url", content: "/faq" },
     ],
     links: [{ rel: "canonical", href: "/faq" }],

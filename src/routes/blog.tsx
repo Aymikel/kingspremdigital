@@ -3,13 +3,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Journal — Pro-Visual Media" },
+      { title: "Journal — Kingsprem Digital" },
       {
         name: "description",
         content:
-          "Insights on design, media, branding, and technology from the Pro-Visual studio.",
+          "Insights on design, media, branding, and technology from the Kingsprem Digital studio.",
       },
-      { property: "og:title", content: "Journal — Pro-Visual Media" },
+      { property: "og:title", content: "Journal — Kingsprem Digital" },
       {
         property: "og:description",
         content: "Articles on design, media, branding, and technology.",

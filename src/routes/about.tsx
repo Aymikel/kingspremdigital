@@ -4,13 +4,13 @@ import heroImg from "../assets/hero-studio.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Pro-Visual Media, Akure" },
+      { title: "About — Kingsprem Digital, Akure" },
       {
         name: "description",
         content:
-          "Our story, mission, and the team behind Pro-Visual Media — a creative media studio in Akure, Ondo State.",
+          "Our story, mission, and the team behind Kingsprem Digital — a creative media studio in Akure, Ondo State.",
       },
-      { property: "og:title", content: "About — Pro-Visual Media" },
+      { property: "og:title", content: "About — Kingsprem Digital" },
       {
         property: "og:description",
         content:
@@ -49,7 +49,7 @@ function AboutPage() {
         </h1>
         <img
           src={heroImg}
-          alt="Inside the Pro-Visual Media studio"
+          alt="Inside the Kingsprem Digital studio"
           className="aspect-[21/9] w-full rounded-sm object-cover"
         />
       </section>
@@ -65,7 +65,7 @@ function AboutPage() {
         </div>
         <div className="space-y-6 text-lg text-muted-foreground">
           <p>
-            Pro-Visual started as two friends filming Sunday services on a
+            Kingsprem Digital started as two friends filming Sunday services on a
             borrowed camera. Eight years later, we're a full-service creative
             media studio serving churches, businesses, and organizations across
             Ondo State and beyond.

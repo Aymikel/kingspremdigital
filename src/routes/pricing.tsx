@@ -4,13 +4,13 @@ import { Check } from "lucide-react";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Pro-Visual Media" },
+      { title: "Pricing — Kingsprem Digital" },
       {
         name: "description",
         content:
           "Transparent packages for web design, live streaming, photography, videography, and equipment rental. Custom quotes on request.",
       },
-      { property: "og:title", content: "Pricing — Pro-Visual Media" },
+      { property: "og:title", content: "Pricing — Kingsprem Digital" },
       {
         property: "og:description",
         content: "Package pricing and custom quotes for creative media services.",

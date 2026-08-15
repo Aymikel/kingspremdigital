@@ -21,7 +21,7 @@ export function SiteNav() {
           to="/"
           className="font-display text-3xl tracking-tighter text-foreground"
         >
-          PRO&#8209;VISUAL
+          KINGSPREM DIGITAL
         </Link>
 
         <div className="hidden gap-8 text-sm font-medium uppercase tracking-widest md:flex">
