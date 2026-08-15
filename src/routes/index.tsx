@@ -219,7 +219,7 @@ function Index() {
               <p className="mb-8 text-sm leading-relaxed opacity-80">
                 {s.desc}
               </p>
-              <div className="h-40 overflow-hidden bg-secondary group-hover:bg-white/10">
+              <div className="h-40 overflow-hidden bg-secondary group-hover:bg-ink-foreground/10">
                 <img
                   src={s.img}
                   alt={s.title}
@@ -293,7 +293,7 @@ function Index() {
                 className={`space-y-3 ${p.span ?? ""} ${i === 0 ? "" : ""}`}
               >
                 <div
-                  className={`overflow-hidden bg-white/5 ${i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"}`}
+                  className={`overflow-hidden bg-ink-foreground/5 ${i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"}`}
                 >
                   <img
                     src={p.img}
@@ -307,7 +307,7 @@ function Index() {
                     <p className="font-display text-xl uppercase leading-tight">
                       {p.title}
                     </p>
-                    <p className="mt-1 text-xs text-white/50">{p.desc}</p>
+                    <p className="mt-1 text-xs text-ink-foreground/50">{p.desc}</p>
                   </div>
                   <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
                     {p.cat}
@@ -411,7 +411,7 @@ function Index() {
             Ready to bring your <span className="text-accent">ideas</span> to
             life?
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/60">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-ink-foreground/60">
             Whether you're launching a brand, organizing an event, or growing
             your online presence, we're here to help.
           </p>
@@ -424,7 +424,7 @@ function Index() {
             </Link>
             <Link
               to="/contact"
-              className="border border-white/20 px-8 py-4 font-bold uppercase tracking-tighter hover:bg-white hover:text-foreground"
+              className="border border-ink-foreground/20 px-8 py-4 font-bold uppercase tracking-tighter hover:bg-white hover:text-foreground"
             >
               Contact Us
             </Link>
@@ -525,7 +525,7 @@ function Index() {
             <div className="font-display text-4xl uppercase leading-tight">
               Start a project brief →
             </div>
-            <p className="mt-6 text-sm text-white/60">
+            <p className="mt-6 text-sm text-ink-foreground/60">
               Tell us about your project, timeline, and budget. We'll get back
               within one business day.
             </p>

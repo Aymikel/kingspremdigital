@@ -137,7 +137,7 @@ function ServicesPage() {
           <h2 className="mb-8 font-display text-5xl uppercase leading-tight md:text-6xl">
             Not sure what you need?
           </h2>
-          <p className="mb-10 text-lg text-white/60">
+          <p className="mb-10 text-lg text-ink-foreground/60">
             Book a free 30-minute consultation. We'll help you scope the right
             package for your goal and budget.
           </p>
