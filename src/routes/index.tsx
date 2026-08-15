@@ -424,7 +424,7 @@ function Index() {
             </Link>
             <Link
               to="/contact"
-              className="border border-ink-foreground/20 px-8 py-4 font-bold uppercase tracking-tighter hover:bg-white hover:text-foreground"
+              className="border border-ink-foreground/20 px-8 py-4 font-bold uppercase tracking-tighter hover:bg-ink-foreground hover:text-ink"
             >
               Contact Us
             </Link>
