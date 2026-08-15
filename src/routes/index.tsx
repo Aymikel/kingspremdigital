@@ -496,13 +496,13 @@ function Index() {
               <div className="mb-1 font-mono text-xs uppercase text-accent">
                 Phone
               </div>
-              <div className="text-lg">+234 800 000 0000</div>
+              <div className="text-lg">+234 916 741 8142</div>
             </div>
             <div>
               <div className="mb-1 font-mono text-xs uppercase text-accent">
                 Email
               </div>
-              <div className="text-lg underline">hello@pro-visual.ng</div>
+              <div className="text-lg underline">kingsprem41@gmail.com</div>
             </div>
             <div>
               <div className="mb-1 font-mono text-xs uppercase text-accent">
