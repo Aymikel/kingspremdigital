@@ -116,3 +116,16 @@
     color: var(--color-accent-foreground);
   }
 }
+
+@layer base {
+  .font-display {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  button,
+  .font-subhead {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+}
