@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import kdLogoNavy from "../assets/kd-logo-navy.jpg.asset.json";
 
 export function SiteFooter() {
   return (
@@ -6,9 +7,17 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="mb-6 font-display text-4xl tracking-tighter">
-              KINGSPREM DIGITAL
+            <div className="mb-6 flex items-center gap-3">
+              <img
+                src={kdLogoNavy.url}
+                alt="Kingsprem Digital logo"
+                className="h-11 w-11 object-contain"
+              />
+              <span className="font-display text-2xl font-bold tracking-tight">
+                KINGSPREM DIGITAL
+              </span>
             </div>
+
             <p className="max-w-sm text-sm leading-relaxed text-ink-foreground/60">
               We provide professional web design, branding, photography,
               videography, live streaming, and media equipment rental services
