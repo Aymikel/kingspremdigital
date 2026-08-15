@@ -86,8 +86,8 @@ function ContactPage() {
             <div className="mb-1 font-mono text-xs uppercase text-accent">
               Phone
             </div>
-            <a href="tel:+2348000000000" className="text-lg hover:underline">
-              +234 800 000 0000
+            <a href="tel:+2349167418142" className="text-lg hover:underline">
+              +234 916 741 8142
             </a>
           </div>
           <div>
@@ -95,10 +95,10 @@ function ContactPage() {
               Email
             </div>
             <a
-              href="mailto:hello@pro-visual.ng"
+              href="mailto:kingsprem41@gmail.com"
               className="text-lg underline"
             >
-              hello@pro-visual.ng
+              kingsprem41@gmail.com
             </a>
           </div>
           <div>
@@ -109,7 +109,7 @@ function ContactPage() {
             <div className="text-lg">Sat, 9:00 AM – 3:00 PM</div>
           </div>
           <a
-            href="https://wa.me/2348000000000"
+            href="https://wa.me/2349167418142"
             target="_blank"
             rel="noreferrer"
             className="inline-block bg-accent px-6 py-3 text-sm font-bold uppercase tracking-widest text-accent-foreground"
