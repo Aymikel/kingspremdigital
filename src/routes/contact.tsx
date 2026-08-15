@@ -55,12 +55,22 @@ function ContactPage() {
       return;
     }
     setSubmitting(true);
-    // No backend wired — simulate submission
+    const d = result.data;
+    const subject = `New enquiry: ${d.service} — ${d.name}`;
+    const body = [
+      `Name: ${d.name}`,
+      `Email: ${d.email}`,
+      `Phone: ${d.phone}`,
+      `Service: ${d.service}`,
+      "",
+      d.message,
+    ].join("\n");
+    window.location.href = `mailto:kingsprem41@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setTimeout(() => {
       setSubmitting(false);
-      toast.success("Message sent. We'll respond within 24 hours.");
+      toast.success("Opening your email app to send to kingsprem41@gmail.com");
       (e.target as HTMLFormElement).reset();
-    }, 700);
+    }, 500);
   }
 
   return (
