@@ -5,9 +5,20 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Bebas Neue", sans-serif;
+  --font-display: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  --color-navy: #0b1f3a;
+  --color-navy-light: #162e4d;
+  --color-navy-dark: #071426;
+  --color-royal: #1746a2;
+  --color-royal-light: #2864c0;
+  --color-royal-dark: #0f347a;
+  --color-gold: #d4a72c;
+  --color-gold-light: #e6c45a;
+  --color-gold-dark: #a77d18;
+
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
