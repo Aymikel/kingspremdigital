@@ -8,6 +8,13 @@ import convInvite from "../assets/work/convocation-invite.png.asset.json";
 import letterhead from "../assets/work/maesta-letterhead.jpg.asset.json";
 import pastriesCard from "../assets/work/pastries-card.jpg.asset.json";
 import mistellReel from "../assets/work/mistell-reel.mp4.asset.json";
+import mistellLogo from "../assets/work/mistell-logo.jpg.asset.json";
+import mistellLogoNavy from "../assets/work/mistell-logo-navy.jpg.asset.json";
+import pastriesMockup from "../assets/work/pastries-card-mockup.png.asset.json";
+import divineFlyer from "../assets/work/divine-life-flyer.jpg.asset.json";
+import bookCover from "../assets/work/holy-spirit-book-cover.png.asset.json";
+import jambFlyer from "../assets/work/jamb-support-flyer.png.asset.json";
+import farmLetterhead from "../assets/work/farm-letterhead.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -32,7 +39,15 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-const CATS = ["All", "Branding", "Flyer Design", "Stationery", "Video"] as const;
+const CATS = [
+  "All",
+  "Branding",
+  "Flyer Design",
+  "Stationery",
+  "Book Covers",
+  "Mockups",
+  "Video",
+] as const;
 type Cat = (typeof CATS)[number];
 
 type Item = {
@@ -94,6 +109,55 @@ const ITEMS: Item[] = [
     desc: "Short-form food promo video.",
     video: true,
     ratio: "aspect-[9/16]",
+  },
+  {
+    title: "Mistell Treats — Logo Mark",
+    cat: "Branding",
+    src: mistellLogo.url,
+    desc: "Chef hat and cutlery monogram for a food brand.",
+    ratio: "aspect-square",
+  },
+  {
+    title: "Mistell Treats — Navy Lockup",
+    cat: "Branding",
+    src: mistellLogoNavy.url,
+    desc: "Reversed logo treatment on brand navy.",
+    ratio: "aspect-square",
+  },
+  {
+    title: "Divine Life Communication Flyer",
+    cat: "Flyer Design",
+    src: divineFlyer.url,
+    desc: "Mobile repair service promotional flyer.",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "First Baptist Church Akure — JAMB Program",
+    cat: "Flyer Design",
+    src: jambFlyer.url,
+    desc: "Call for support and volunteers campaign flyer.",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "Excellent Greatness Farm Letterhead",
+    cat: "Stationery",
+    src: farmLetterhead.url,
+    desc: "Branded letterhead for the farm venture.",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "Manifesting the Fruit and Gifts of the Holy Spirit",
+    cat: "Book Covers",
+    src: bookCover.url,
+    desc: "Full wrap book cover for Joseph Adeyemi Akintunde.",
+    ratio: "aspect-[4/3]",
+  },
+  {
+    title: "Pastries Jungle Card Mockup",
+    cat: "Mockups",
+    src: pastriesMockup.url,
+    desc: "Presentation mockup of the double-sided card.",
+    ratio: "aspect-[4/3]",
   },
 ];
 
