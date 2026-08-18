@@ -110,6 +110,55 @@ const ITEMS: Item[] = [
     video: true,
     ratio: "aspect-[9/16]",
   },
+  {
+    title: "Mistell Treats — Logo Mark",
+    cat: "Branding",
+    src: mistellLogo.url,
+    desc: "Chef hat and cutlery monogram for a food brand.",
+    ratio: "aspect-square",
+  },
+  {
+    title: "Mistell Treats — Navy Lockup",
+    cat: "Branding",
+    src: mistellLogoNavy.url,
+    desc: "Reversed logo treatment on brand navy.",
+    ratio: "aspect-square",
+  },
+  {
+    title: "Divine Life Communication Flyer",
+    cat: "Flyer Design",
+    src: divineFlyer.url,
+    desc: "Mobile repair service promotional flyer.",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "First Baptist Church Akure — JAMB Program",
+    cat: "Flyer Design",
+    src: jambFlyer.url,
+    desc: "Call for support and volunteers campaign flyer.",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "Excellent Greatness Farm Letterhead",
+    cat: "Stationery",
+    src: farmLetterhead.url,
+    desc: "Branded letterhead for the farm venture.",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "Manifesting the Fruit and Gifts of the Holy Spirit",
+    cat: "Book Covers",
+    src: bookCover.url,
+    desc: "Full wrap book cover for Joseph Adeyemi Akintunde.",
+    ratio: "aspect-[4/3]",
+  },
+  {
+    title: "Pastries Jungle Card Mockup",
+    cat: "Mockups",
+    src: pastriesMockup.url,
+    desc: "Presentation mockup of the double-sided card.",
+    ratio: "aspect-[4/3]",
+  },
 ];
 
 function PortfolioPage() {
