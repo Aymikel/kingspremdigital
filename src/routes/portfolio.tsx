@@ -39,7 +39,15 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-const CATS = ["All", "Branding", "Flyer Design", "Stationery", "Video"] as const;
+const CATS = [
+  "All",
+  "Branding",
+  "Flyer Design",
+  "Stationery",
+  "Book Covers",
+  "Mockups",
+  "Video",
+] as const;
 type Cat = (typeof CATS)[number];
 
 type Item = {
