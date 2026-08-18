@@ -8,6 +8,13 @@ import convInvite from "../assets/work/convocation-invite.png.asset.json";
 import letterhead from "../assets/work/maesta-letterhead.jpg.asset.json";
 import pastriesCard from "../assets/work/pastries-card.jpg.asset.json";
 import mistellReel from "../assets/work/mistell-reel.mp4.asset.json";
+import mistellLogo from "../assets/work/mistell-logo.jpg.asset.json";
+import mistellLogoNavy from "../assets/work/mistell-logo-navy.jpg.asset.json";
+import pastriesMockup from "../assets/work/pastries-card-mockup.png.asset.json";
+import divineFlyer from "../assets/work/divine-life-flyer.jpg.asset.json";
+import bookCover from "../assets/work/holy-spirit-book-cover.png.asset.json";
+import jambFlyer from "../assets/work/jamb-support-flyer.png.asset.json";
+import farmLetterhead from "../assets/work/farm-letterhead.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
