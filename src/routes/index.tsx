@@ -1,20 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight, Star } from "lucide-react";
 
-import heroImg from "../assets/hero-studio.jpg";
-import svcWeb from "../assets/service-web.jpg";
-import svcGraphic from "../assets/service-graphic.jpg";
-import svcStream from "../assets/service-stream.jpg";
-import svcRental from "../assets/service-rental.jpg";
-import svcPhoto from "../assets/service-photo.jpg";
-import svcVideo from "../assets/service-video.jpg";
-import projMarket from "../assets/project-market.jpg";
-import projBrand from "../assets/project-brand.jpg";
-import projChurch from "../assets/project-church.jpg";
-import projWeb from "../assets/project-web.jpg";
-import projConference from "../assets/project-conference.jpg";
-import projWedding from "../assets/project-wedding.jpg";
-import projProduct from "../assets/project-product.jpg";
+import farmLogo from "../assets/work/farm-logo-full.jpg.asset.json";
+import mistellConv from "../assets/work/mistell-convocation.png.asset.json";
+import convInvite from "../assets/work/convocation-invite.png.asset.json";
+import letterhead from "../assets/work/maesta-letterhead.jpg.asset.json";
+import pastriesCard from "../assets/work/pastries-card.jpg.asset.json";
+import bookCover from "../assets/work/holy-spirit-book-cover.png.asset.json";
+import divineFlyer from "../assets/work/divine-life-flyer.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -25,37 +18,31 @@ const SERVICES = [
     n: "01",
     title: "Website Design",
     desc: "Modern, responsive websites designed to grow your business and attract more customers.",
-    img: svcWeb,
   },
   {
     n: "02",
     title: "Graphic Design",
     desc: "Brand identity, logos, flyers, banners, social media designs, business cards, and marketing materials.",
-    img: svcGraphic,
   },
   {
     n: "03",
     title: "Live Streaming",
     desc: "Professional live streaming for churches, conferences, weddings, seminars, concerts, and corporate events.",
-    img: svcStream,
   },
   {
     n: "04",
     title: "Equipment Rental",
     desc: "High-quality cameras, projectors, LED screens, microphones, sound systems, and lighting for hire.",
-    img: svcRental,
   },
   {
     n: "05",
     title: "Photography",
     desc: "Professional photography for weddings, birthdays, graduations, corporate branding, products, and events.",
-    img: svcPhoto,
   },
   {
     n: "06",
     title: "Videography",
     desc: "Commercial videos, documentaries, event coverage, promotional videos, interviews, and music videos.",
-    img: svcVideo,
   },
 ];
 
@@ -69,14 +56,15 @@ const WHY = [
 ];
 
 const PROJECTS = [
-  { img: projMarket, title: "The Heart of Ondo", cat: "Documentary", desc: "Cinematic film chronicling market life in Akure.", span: "lg:col-span-2 lg:row-span-2" },
-  { img: projBrand, title: "Tech Hub Rebrand", cat: "Branding", desc: "Full visual identity for a growing tech incubator." },
-  { img: projChurch, title: "Glory Chapel Live", cat: "Live Streaming", desc: "Multi-cam streaming for a 5,000-seat auditorium." },
-  { img: projWeb, title: "Origins Commerce", cat: "Web Design", desc: "E-commerce platform for a lifestyle brand." },
-  { img: projConference, title: "Ondo Innovation Summit", cat: "Event Coverage", desc: "Full photo and video coverage of a two-day conference." },
-  { img: projWedding, title: "Ade & Tobi Wedding", cat: "Photography", desc: "Traditional and white wedding storytelling." },
-  { img: projProduct, title: "Neon Sole Campaign", cat: "Product Video", desc: "Kinetic product film for a sneaker launch." },
+  { img: mistellConv.url, title: "Mistell Treats Convocation", cat: "Flyer Design", desc: "Convocation campaign flyer for an Akungba food brand.", span: "lg:col-span-2 lg:row-span-2" },
+  { img: farmLogo.url, title: "Excellent Greatness Farm", cat: "Branding", desc: "Logo and identity for an agricultural venture." },
+  { img: convInvite.url, title: "ABUAD Convocation Invite", cat: "Flyer Design", desc: "Doctorate convocation invitation design." },
+  { img: letterhead.url, title: "Maesta Graphics Studio", cat: "Stationery", desc: "Letterhead and stationery system." },
+  { img: pastriesCard.url, title: "Pastries Jungle", cat: "Stationery", desc: "Business card design for a chef-led bakery." },
+  { img: bookCover.url, title: "Holy Spirit Book Cover", cat: "Print", desc: "Cover artwork and typography." },
+  { img: divineFlyer.url, title: "Divine Life Programme", cat: "Flyer Design", desc: "Church programme flyer." },
 ];
+
 
 const PROCESS = [
   { n: "01", t: "Consultation", d: "We understand your goals, audience, and project requirements." },
@@ -132,15 +120,6 @@ function Index() {
           </div>
         </div>
 
-        <div className="animate-reveal mt-20 [animation-delay:200ms]">
-          <img
-            src={heroImg}
-            alt="Kingsprem Digital media crew filming with a cinema camera in the Akure studio"
-            width={1600}
-            height={900}
-            className="aspect-video w-full rounded-sm object-cover outline outline-black/5"
-          />
-        </div>
       </section>
 
       {/* Trust */}
@@ -219,16 +198,6 @@ function Index() {
               <p className="mb-8 text-sm leading-relaxed opacity-80">
                 {s.desc}
               </p>
-              <div className="h-40 overflow-hidden bg-secondary group-hover:bg-ink-foreground/10">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
             </div>
           ))}
         </div>
