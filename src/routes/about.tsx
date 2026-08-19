@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "../assets/hero-studio.jpg";
+import heroImg from "../assets/photos/camera-rig.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -48,7 +48,7 @@ function AboutPage() {
           A creative media studio built in Akure, working across Nigeria.
         </h1>
         <img
-          src={heroImg}
+          src={heroImg.url}
           alt="Inside the Kingsprem Digital studio"
           className="aspect-[21/9] w-full rounded-sm object-cover"
         />

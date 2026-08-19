@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import svcWeb from "../assets/service-web.jpg";
-import svcGraphic from "../assets/service-graphic.jpg";
-import svcStream from "../assets/service-stream.jpg";
-import svcRental from "../assets/service-rental.jpg";
-import svcPhoto from "../assets/service-photo.jpg";
-import svcVideo from "../assets/service-video.jpg";
+import cameraRig from "../assets/photos/camera-rig.jpg.asset.json";
+import clientPortrait from "../assets/photos/client-portrait.jpg.asset.json";
+import churchArt from "../assets/photos/church-flyer-art.jpg.asset.json";
+import flameArt from "../assets/photos/flame-art.jpg.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -28,46 +26,46 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-const SERVICES = [
+const SERVICES: { n: string; title: string; img: string | null; desc: string; includes: string[] }[] = [
   {
     n: "01",
     title: "Website Design",
-    img: svcWeb,
+    img: null,
     desc: "Modern, responsive websites — from landing pages to full e-commerce platforms — built to convert and easy to maintain.",
     includes: ["UI/UX design", "Responsive development", "SEO foundations", "Analytics setup"],
   },
   {
     n: "02",
     title: "Graphic Design",
-    img: svcGraphic,
+    img: churchArt.url,
     desc: "Full visual identity systems and marketing collateral that make your brand impossible to ignore.",
     includes: ["Logo & identity", "Flyers & banners", "Social media kits", "Print collateral"],
   },
   {
     n: "03",
     title: "Live Streaming",
-    img: svcStream,
+    img: flameArt.url,
     desc: "Multi-cam professional streaming for churches, conferences, weddings, seminars, concerts, and corporate events.",
     includes: ["Multi-camera capture", "Broadcast switching", "Multi-platform output", "On-site engineers"],
   },
   {
     n: "04",
     title: "Equipment Rental",
-    img: svcRental,
+    img: cameraRig.url,
     desc: "Cinema-grade cameras, projectors, LED screens, microphones, sound systems, lighting, laptops, and streaming rigs for hire.",
     includes: ["Camera & lens kits", "Sound systems", "LED walls & projectors", "Lighting packages"],
   },
   {
     n: "05",
     title: "Photography",
-    img: svcPhoto,
+    img: clientPortrait.url,
     desc: "Weddings, birthdays, graduations, corporate branding, products, and events — with an editorial eye.",
     includes: ["Weddings & events", "Corporate portraits", "Product photography", "Editorial shoots"],
   },
   {
     n: "06",
     title: "Videography",
-    img: svcVideo,
+    img: cameraRig.url,
     desc: "Commercial videos, documentaries, event coverage, promotional videos, interviews, music videos, and social content.",
     includes: ["Commercial films", "Event coverage", "Music videos", "Social content"],
   },
@@ -94,14 +92,16 @@ function ServicesPage() {
                 i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <div>
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full rounded-sm object-cover"
-                />
-              </div>
+              {s.img && (
+                <div>
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full rounded-sm object-cover"
+                  />
+                </div>
+              )}
               <div>
                 <span className="mb-4 block font-mono text-xs text-accent">
                   {s.n} /
