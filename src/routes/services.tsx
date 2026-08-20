@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import cameraRig from "../assets/photos/camera-rig.jpg.asset.json";
-import clientPortrait from "../assets/photos/client-portrait.jpg.asset.json";
-import churchArt from "../assets/photos/church-flyer-art.jpg.asset.json";
-import flameArt from "../assets/photos/flame-art.jpg.asset.json";
+import { listServices } from "@/lib/content.functions";
 
 export const Route = createFileRoute("/services")({
+  loader: () => listServices(),
   head: () => ({
     meta: [
       { title: "Services — Kingsprem Digital" },
@@ -16,62 +14,25 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Services — Kingsprem Digital" },
       {
         property: "og:description",
-        content:
-          "Six integrated media services from a single studio in Akure.",
+        content: "Six integrated media services from a single studio in Akure.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
   }),
+  errorComponent: () => (
+    <div className="mx-auto max-w-3xl px-6 py-24 text-center text-muted-foreground">
+      We couldn't load our services right now. Please refresh the page.
+    </div>
+  ),
   component: ServicesPage,
 });
 
-const SERVICES: { n: string; title: string; img: string | null; desc: string; includes: string[] }[] = [
-  {
-    n: "01",
-    title: "Website Design",
-    img: null,
-    desc: "Modern, responsive websites — from landing pages to full e-commerce platforms — built to convert and easy to maintain.",
-    includes: ["UI/UX design", "Responsive development", "SEO foundations", "Analytics setup"],
-  },
-  {
-    n: "02",
-    title: "Graphic Design",
-    img: churchArt.url,
-    desc: "Full visual identity systems and marketing collateral that make your brand impossible to ignore.",
-    includes: ["Logo & identity", "Flyers & banners", "Social media kits", "Print collateral"],
-  },
-  {
-    n: "03",
-    title: "Live Streaming",
-    img: flameArt.url,
-    desc: "Multi-cam professional streaming for churches, conferences, weddings, seminars, concerts, and corporate events.",
-    includes: ["Multi-camera capture", "Broadcast switching", "Multi-platform output", "On-site engineers"],
-  },
-  {
-    n: "04",
-    title: "Equipment Rental",
-    img: cameraRig.url,
-    desc: "Cinema-grade cameras, projectors, LED screens, microphones, sound systems, lighting, laptops, and streaming rigs for hire.",
-    includes: ["Camera & lens kits", "Sound systems", "LED walls & projectors", "Lighting packages"],
-  },
-  {
-    n: "05",
-    title: "Photography",
-    img: clientPortrait.url,
-    desc: "Weddings, birthdays, graduations, corporate branding, products, and events — with an editorial eye.",
-    includes: ["Weddings & events", "Corporate portraits", "Product photography", "Editorial shoots"],
-  },
-  {
-    n: "06",
-    title: "Videography",
-    img: cameraRig.url,
-    desc: "Commercial videos, documentaries, event coverage, promotional videos, interviews, music videos, and social content.",
-    includes: ["Commercial films", "Event coverage", "Music videos", "Social content"],
-  },
-];
-
 function ServicesPage() {
+  const services = Route.useLoaderData();
+
   return (
     <div>
       <section className="mx-auto max-w-7xl px-6 py-24">
@@ -79,53 +40,75 @@ function ServicesPage() {
           Services
         </span>
         <h1 className="max-w-4xl text-balance font-display text-6xl uppercase leading-[0.9] md:text-8xl">
-          Six integrated capabilities. One studio.
+          Integrated capabilities. One studio.
         </h1>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-24">
         <div className="space-y-24">
-          {SERVICES.map((s, i) => (
+          {services.map((s, i) => (
             <div
-              key={s.n}
+              key={s.id}
               className={`grid items-center gap-12 md:grid-cols-2 ${
                 i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              {s.img && (
-                <div>
+              <div>
+                {s.hero_video_url ? (
+                  <video
+                    src={s.hero_video_url}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="aspect-[4/3] w-full rounded-sm bg-secondary object-cover"
+                  />
+                ) : s.hero_image_url ? (
                   <img
-                    src={s.img}
-                    alt={s.title}
+                    src={s.hero_image_url}
+                    alt={s.name}
                     loading="lazy"
                     className="aspect-[4/3] w-full rounded-sm object-cover"
                   />
-                </div>
-              )}
+                ) : (
+                  <div className="flex aspect-[4/3] w-full items-center justify-center rounded-sm bg-secondary">
+                    <span className="font-display text-4xl uppercase text-foreground/15">
+                      {s.name}
+                    </span>
+                  </div>
+                )}
+              </div>
               <div>
                 <span className="mb-4 block font-mono text-xs text-accent">
-                  {s.n} /
+                  {String(i + 1).padStart(2, "0")} /
                 </span>
                 <h2 className="mb-6 font-display text-5xl uppercase leading-none">
-                  {s.title}
+                  {s.name}
                 </h2>
-                <p className="mb-8 text-lg text-muted-foreground">{s.desc}</p>
-                <ul className="mb-8 grid grid-cols-2 gap-y-2 border-t border-foreground/10 pt-6">
-                  {s.includes.map((inc) => (
-                    <li
-                      key={inc}
-                      className="font-mono text-xs uppercase tracking-widest"
-                    >
-                      · {inc}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/contact"
-                  className="inline-block bg-foreground px-6 py-3 text-sm font-bold uppercase tracking-widest text-background hover:bg-accent"
-                >
-                  Request Quote
-                </Link>
+                <p className="mb-8 text-lg text-muted-foreground">{s.description}</p>
+                {s.includes.length > 0 && (
+                  <ul className="mb-8 grid grid-cols-2 gap-y-2 border-t border-foreground/10 pt-6">
+                    {s.includes.map((inc) => (
+                      <li key={inc} className="font-mono text-xs uppercase tracking-widest">
+                        · {inc}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
+                    className="inline-block bg-foreground px-6 py-3 text-sm font-bold uppercase tracking-widest text-background hover:bg-accent"
+                  >
+                    View work
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-block border border-foreground/20 px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-secondary"
+                  >
+                    Request Quote
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -138,8 +121,8 @@ function ServicesPage() {
             Not sure what you need?
           </h2>
           <p className="mb-10 text-lg text-ink-foreground/60">
-            Book a free 30-minute consultation. We'll help you scope the right
-            package for your goal and budget.
+            Book a free 30-minute consultation. We'll help you scope the right package for
+            your goal and budget.
           </p>
           <Link
             to="/contact"
