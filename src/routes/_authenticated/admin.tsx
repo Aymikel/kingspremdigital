@@ -386,7 +386,7 @@ function ProjectEditor({
     try {
       const payload = {
         title,
-        slug: project?.slug ?? slugify(title) || `project-${Date.now()}`,
+        slug: project?.slug ?? (slugify(title) || `project-${Date.now()}`),
         description,
         service_id: serviceId || null,
         client_name: client || null,
