@@ -1,22 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-
-import farmLogo from "../assets/work/farm-logo-full.jpg.asset.json";
-import farmLogoAlt from "../assets/work/farm-logo-alt.png.asset.json";
-import mistellConv from "../assets/work/mistell-convocation.png.asset.json";
-import convInvite from "../assets/work/convocation-invite.png.asset.json";
-import letterhead from "../assets/work/maesta-letterhead.jpg.asset.json";
-import pastriesCard from "../assets/work/pastries-card.jpg.asset.json";
-import mistellReel from "../assets/work/mistell-reel.mp4.asset.json";
-import mistellLogo from "../assets/work/mistell-logo.jpg.asset.json";
-import mistellLogoNavy from "../assets/work/mistell-logo-navy.jpg.asset.json";
-import pastriesMockup from "../assets/work/pastries-card-mockup.png.asset.json";
-import divineFlyer from "../assets/work/divine-life-flyer.jpg.asset.json";
-import bookCover from "../assets/work/holy-spirit-book-cover.png.asset.json";
-import jambFlyer from "../assets/work/jamb-support-flyer.png.asset.json";
-import farmLetterhead from "../assets/work/farm-letterhead.jpg.asset.json";
+import { listProjects, listServices } from "@/lib/content.functions";
 
 export const Route = createFileRoute("/portfolio")({
+  loader: async () => {
+    const [services, projects] = await Promise.all([listServices(), listProjects()]);
+    return { services, projects };
+  },
   head: () => ({
     meta: [
       { title: "Portfolio — Kingsprem Digital" },
@@ -36,134 +26,20 @@ export const Route = createFileRoute("/portfolio")({
     ],
     links: [{ rel: "canonical", href: "/portfolio" }],
   }),
+  errorComponent: () => (
+    <div className="mx-auto max-w-3xl px-6 py-24 text-center text-muted-foreground">
+      We couldn't load the portfolio right now. Please refresh the page.
+    </div>
+  ),
   component: PortfolioPage,
 });
 
-const CATS = [
-  "All",
-  "Branding",
-  "Flyer Design",
-  "Stationery",
-  "Book Covers",
-  "Mockups",
-  "Video",
-] as const;
-type Cat = (typeof CATS)[number];
-
-type Item = {
-  title: string;
-  cat: Exclude<Cat, "All">;
-  src: string;
-  desc: string;
-  video?: boolean;
-  ratio?: string;
-};
-
-const ITEMS: Item[] = [
-  {
-    title: "Excellent Greatness Farm Venture",
-    cat: "Branding",
-    src: farmLogo.url,
-    desc: "Primary circular logo mark for an agro venture.",
-    ratio: "aspect-square",
-  },
-  {
-    title: "Excellent Greatness Farm — Alt Mark",
-    cat: "Branding",
-    src: farmLogoAlt.url,
-    desc: "Simplified secondary logo lockup.",
-    ratio: "aspect-square",
-  },
-  {
-    title: "Mistell Treats Convocation Flyer",
-    cat: "Flyer Design",
-    src: mistellConv.url,
-    desc: "Celebration menu campaign flyer.",
-    ratio: "aspect-square",
-  },
-  {
-    title: "Dr. Busayo Sarah Ige — Convocation",
-    cat: "Flyer Design",
-    src: convInvite.url,
-    desc: "PhD convocation invitation design.",
-    ratio: "aspect-square",
-  },
-  {
-    title: "Maesta Graphics Studio Letterhead",
-    cat: "Stationery",
-    src: letterhead.url,
-    desc: "Corporate letterhead layout.",
-    ratio: "aspect-[3/4]",
-  },
-  {
-    title: "Pastries Jungle Business Card",
-    cat: "Stationery",
-    src: pastriesCard.url,
-    desc: "Double-sided business card design.",
-    ratio: "aspect-[16/10]",
-  },
-  {
-    title: "Mistell Treats Promo Reel",
-    cat: "Video",
-    src: mistellReel.url,
-    desc: "Short-form food promo video.",
-    video: true,
-    ratio: "aspect-[9/16]",
-  },
-  {
-    title: "Mistell Treats — Logo Mark",
-    cat: "Branding",
-    src: mistellLogo.url,
-    desc: "Chef hat and cutlery monogram for a food brand.",
-    ratio: "aspect-square",
-  },
-  {
-    title: "Mistell Treats — Navy Lockup",
-    cat: "Branding",
-    src: mistellLogoNavy.url,
-    desc: "Reversed logo treatment on brand navy.",
-    ratio: "aspect-square",
-  },
-  {
-    title: "Divine Life Communication Flyer",
-    cat: "Flyer Design",
-    src: divineFlyer.url,
-    desc: "Mobile repair service promotional flyer.",
-    ratio: "aspect-[3/4]",
-  },
-  {
-    title: "First Baptist Church Akure — JAMB Program",
-    cat: "Flyer Design",
-    src: jambFlyer.url,
-    desc: "Call for support and volunteers campaign flyer.",
-    ratio: "aspect-[3/4]",
-  },
-  {
-    title: "Excellent Greatness Farm Letterhead",
-    cat: "Stationery",
-    src: farmLetterhead.url,
-    desc: "Branded letterhead for the farm venture.",
-    ratio: "aspect-[3/4]",
-  },
-  {
-    title: "Manifesting the Fruit and Gifts of the Holy Spirit",
-    cat: "Book Covers",
-    src: bookCover.url,
-    desc: "Full wrap book cover for Joseph Adeyemi Akintunde.",
-    ratio: "aspect-[4/3]",
-  },
-  {
-    title: "Pastries Jungle Card Mockup",
-    cat: "Mockups",
-    src: pastriesMockup.url,
-    desc: "Presentation mockup of the double-sided card.",
-    ratio: "aspect-[4/3]",
-  },
-];
-
 function PortfolioPage() {
-  const [active, setActive] = useState<Cat>("All");
-  const filtered = active === "All" ? ITEMS : ITEMS.filter((i) => i.cat === active);
+  const { services, projects } = Route.useLoaderData();
+  const [active, setActive] = useState<string>("all");
+
+  const filtered =
+    active === "all" ? projects : projects.filter((p) => p.service?.slug === active);
 
   return (
     <div>
@@ -178,53 +54,59 @@ function PortfolioPage() {
 
       <section className="mx-auto max-w-7xl px-6 pb-24">
         <div className="mb-12 flex flex-wrap gap-2 border-y border-foreground/10 py-6">
-          {CATS.map((c) => (
+          {[{ slug: "all", name: "All" }, ...services].map((c) => (
             <button
-              key={c}
-              onClick={() => setActive(c)}
+              key={c.slug}
+              onClick={() => setActive(c.slug)}
               className={`px-4 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
-                active === c ? "bg-foreground text-background" : "hover:text-accent"
+                active === c.slug ? "bg-foreground text-background" : "hover:text-accent"
               }`}
             >
-              {c}
+              {c.name}
             </button>
           ))}
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((p) => (
-            <article key={p.title} className="group">
-              <div
-                className={`mb-4 ${p.ratio ?? "aspect-[4/5]"} overflow-hidden bg-secondary`}
-              >
-                {p.video ? (
-                  <video
-                    src={p.src}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  <img
-                    src={p.src}
-                    alt={`${p.title} — ${p.desc}`}
-                    loading="lazy"
-                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                )}
-              </div>
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-display text-2xl uppercase leading-tight">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
+            <article key={p.id} className="group">
+              <Link to="/portfolio/$slug" params={{ slug: p.slug }}>
+                <div
+                  className={`mb-4 overflow-hidden bg-secondary ${p.cover_ratio ?? "aspect-[4/5]"}`}
+                >
+                  {p.video_url ? (
+                    <video
+                      src={p.video_url}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="h-full w-full object-cover"
+                    />
+                  ) : p.cover_url ? (
+                    <img
+                      src={p.cover_url}
+                      alt={`${p.title} — ${p.description}`}
+                      loading="lazy"
+                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="px-4 text-center font-display text-2xl uppercase text-foreground/15">
+                        {p.title}
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
-                  {p.cat}
-                </span>
-              </div>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-display text-2xl uppercase leading-tight">{p.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{p.description}</p>
+                  </div>
+                  <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
+                    {p.service?.name ?? "Studio"}
+                  </span>
+                </div>
+              </Link>
             </article>
           ))}
         </div>

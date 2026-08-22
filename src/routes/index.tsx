@@ -1,50 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight, Star } from "lucide-react";
-
-import farmLogo from "../assets/work/farm-logo-full.jpg.asset.json";
-import mistellConv from "../assets/work/mistell-convocation.png.asset.json";
-import convInvite from "../assets/work/convocation-invite.png.asset.json";
-import letterhead from "../assets/work/maesta-letterhead.jpg.asset.json";
-import pastriesCard from "../assets/work/pastries-card.jpg.asset.json";
-import bookCover from "../assets/work/holy-spirit-book-cover.png.asset.json";
-import divineFlyer from "../assets/work/divine-life-flyer.jpg.asset.json";
+import { getHomeContent } from "@/lib/content.functions";
 
 export const Route = createFileRoute("/")({
+  loader: () => getHomeContent(),
+  errorComponent: () => (
+    <div className="mx-auto max-w-3xl px-6 py-24 text-center text-muted-foreground">
+      We couldn't load the page content right now. Please refresh.
+    </div>
+  ),
   component: Index,
 });
-
-const SERVICES = [
-  {
-    n: "01",
-    title: "Website Design",
-    desc: "Modern, responsive websites designed to grow your business and attract more customers.",
-  },
-  {
-    n: "02",
-    title: "Graphic Design",
-    desc: "Brand identity, logos, flyers, banners, social media designs, business cards, and marketing materials.",
-  },
-  {
-    n: "03",
-    title: "Live Streaming",
-    desc: "Professional live streaming for churches, conferences, weddings, seminars, concerts, and corporate events.",
-  },
-  {
-    n: "04",
-    title: "Equipment Rental",
-    desc: "High-quality cameras, projectors, LED screens, microphones, sound systems, and lighting for hire.",
-  },
-  {
-    n: "05",
-    title: "Photography",
-    desc: "Professional photography for weddings, birthdays, graduations, corporate branding, products, and events.",
-  },
-  {
-    n: "06",
-    title: "Videography",
-    desc: "Commercial videos, documentaries, event coverage, promotional videos, interviews, and music videos.",
-  },
-];
 
 const WHY = [
   { t: "Creative Professionals", d: "Experienced designers and media experts delivering quality work." },
@@ -55,15 +21,6 @@ const WHY = [
   { t: "Reliable Support", d: "Available before, during, and after project completion." },
 ];
 
-const PROJECTS = [
-  { img: mistellConv.url, title: "Mistell Treats Convocation", cat: "Flyer Design", desc: "Convocation campaign flyer for an Akungba food brand.", span: "lg:col-span-2 lg:row-span-2" },
-  { img: farmLogo.url, title: "Excellent Greatness Farm", cat: "Branding", desc: "Logo and identity for an agricultural venture." },
-  { img: convInvite.url, title: "ABUAD Convocation Invite", cat: "Flyer Design", desc: "Doctorate convocation invitation design." },
-  { img: letterhead.url, title: "Maesta Graphics Studio", cat: "Stationery", desc: "Letterhead and stationery system." },
-  { img: pastriesCard.url, title: "Pastries Jungle", cat: "Stationery", desc: "Business card design for a chef-led bakery." },
-  { img: bookCover.url, title: "Holy Spirit Book Cover", cat: "Print", desc: "Cover artwork and typography." },
-  { img: divineFlyer.url, title: "Divine Life Programme", cat: "Flyer Design", desc: "Church programme flyer." },
-];
 
 
 const PROCESS = [
@@ -86,7 +43,10 @@ const BLOG = [
 ];
 
 function Index() {
+  const { services, featured, latest } = Route.useLoaderData();
+  const reel = featured.length > 0 ? featured : latest;
   return (
+
     <div className="text-foreground">
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-32">
@@ -186,21 +146,24 @@ function Index() {
         </div>
 
         <div className="grid grid-cols-1 gap-px border border-foreground/5 bg-foreground/5 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <div
-              key={s.n}
+          {services.map((s, i) => (
+            <Link
+              to="/services/$slug"
+              params={{ slug: s.slug }}
+              key={s.id}
               className="group bg-background p-8 transition-colors hover:bg-foreground hover:text-background"
             >
               <span className="mb-12 block font-mono text-xs text-accent">
-                {s.n} /
+                {String(i + 1).padStart(2, "0")} /
               </span>
-              <h3 className="mb-4 font-display text-3xl uppercase">{s.title}</h3>
+              <h3 className="mb-4 font-display text-3xl uppercase">{s.name}</h3>
               <p className="mb-8 text-sm leading-relaxed opacity-80">
-                {s.desc}
+                {s.tagline ?? s.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
+
         <div className="mt-12 text-center">
           <Link
             to="/services"
@@ -255,36 +218,61 @@ function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {PROJECTS.map((p, i) => (
-              <div
-                key={p.title}
-                className={`space-y-3 ${p.span ?? ""} ${i === 0 ? "" : ""}`}
-              >
-                <div
-                  className={`overflow-hidden bg-ink-foreground/5 ${i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"}`}
+          {reel.length === 0 ? (
+            <p className="border border-dashed border-ink-foreground/20 p-16 text-center text-ink-foreground/50">
+              Featured work is being updated — check the portfolio for our latest projects.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {reel.map((p, i) => (
+                <Link
+                  to="/portfolio/$slug"
+                  params={{ slug: p.slug }}
+                  key={p.id}
+                  className={`space-y-3 ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
                 >
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-display text-xl uppercase leading-tight">
-                      {p.title}
-                    </p>
-                    <p className="mt-1 text-xs text-ink-foreground/50">{p.desc}</p>
+                  <div
+                    className={`overflow-hidden bg-ink-foreground/5 ${i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"}`}
+                  >
+                    {p.video_url ? (
+                      <video
+                        src={p.video_url}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="h-full w-full object-cover"
+                      />
+                    ) : p.cover_url ? (
+                      <img
+                        src={p.cover_url}
+                        alt={p.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center px-4 text-center">
+                        <span className="font-display text-2xl uppercase text-ink-foreground/20">
+                          {p.title}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
-                    {p.cat}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="font-display text-xl uppercase leading-tight">
+                        {p.title}
+                      </p>
+                      <p className="mt-1 text-xs text-ink-foreground/50">{p.description}</p>
+                    </div>
+                    <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
+                      {p.service?.name ?? "Studio"}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+
 
           <div className="mt-16 text-center">
             <Link
