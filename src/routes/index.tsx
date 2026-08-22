@@ -1,50 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight, Star } from "lucide-react";
-
-import farmLogo from "../assets/work/farm-logo-full.jpg.asset.json";
-import mistellConv from "../assets/work/mistell-convocation.png.asset.json";
-import convInvite from "../assets/work/convocation-invite.png.asset.json";
-import letterhead from "../assets/work/maesta-letterhead.jpg.asset.json";
-import pastriesCard from "../assets/work/pastries-card.jpg.asset.json";
-import bookCover from "../assets/work/holy-spirit-book-cover.png.asset.json";
-import divineFlyer from "../assets/work/divine-life-flyer.jpg.asset.json";
+import { getHomeContent } from "@/lib/content.functions";
 
 export const Route = createFileRoute("/")({
+  loader: () => getHomeContent(),
+  errorComponent: () => (
+    <div className="mx-auto max-w-3xl px-6 py-24 text-center text-muted-foreground">
+      We couldn't load the page content right now. Please refresh.
+    </div>
+  ),
   component: Index,
 });
-
-const SERVICES = [
-  {
-    n: "01",
-    title: "Website Design",
-    desc: "Modern, responsive websites designed to grow your business and attract more customers.",
-  },
-  {
-    n: "02",
-    title: "Graphic Design",
-    desc: "Brand identity, logos, flyers, banners, social media designs, business cards, and marketing materials.",
-  },
-  {
-    n: "03",
-    title: "Live Streaming",
-    desc: "Professional live streaming for churches, conferences, weddings, seminars, concerts, and corporate events.",
-  },
-  {
-    n: "04",
-    title: "Equipment Rental",
-    desc: "High-quality cameras, projectors, LED screens, microphones, sound systems, and lighting for hire.",
-  },
-  {
-    n: "05",
-    title: "Photography",
-    desc: "Professional photography for weddings, birthdays, graduations, corporate branding, products, and events.",
-  },
-  {
-    n: "06",
-    title: "Videography",
-    desc: "Commercial videos, documentaries, event coverage, promotional videos, interviews, and music videos.",
-  },
-];
 
 const WHY = [
   { t: "Creative Professionals", d: "Experienced designers and media experts delivering quality work." },
@@ -55,15 +21,6 @@ const WHY = [
   { t: "Reliable Support", d: "Available before, during, and after project completion." },
 ];
 
-const PROJECTS = [
-  { img: mistellConv.url, title: "Mistell Treats Convocation", cat: "Flyer Design", desc: "Convocation campaign flyer for an Akungba food brand.", span: "lg:col-span-2 lg:row-span-2" },
-  { img: farmLogo.url, title: "Excellent Greatness Farm", cat: "Branding", desc: "Logo and identity for an agricultural venture." },
-  { img: convInvite.url, title: "ABUAD Convocation Invite", cat: "Flyer Design", desc: "Doctorate convocation invitation design." },
-  { img: letterhead.url, title: "Maesta Graphics Studio", cat: "Stationery", desc: "Letterhead and stationery system." },
-  { img: pastriesCard.url, title: "Pastries Jungle", cat: "Stationery", desc: "Business card design for a chef-led bakery." },
-  { img: bookCover.url, title: "Holy Spirit Book Cover", cat: "Print", desc: "Cover artwork and typography." },
-  { img: divineFlyer.url, title: "Divine Life Programme", cat: "Flyer Design", desc: "Church programme flyer." },
-];
 
 
 const PROCESS = [
