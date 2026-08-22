@@ -218,13 +218,13 @@ function Index() {
             </div>
           </div>
 
-          {featured.length === 0 ? (
+          {reel.length === 0 ? (
             <p className="border border-dashed border-ink-foreground/20 p-16 text-center text-ink-foreground/50">
               Featured work is being updated — check the portfolio for our latest projects.
             </p>
           ) : (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {featured.map((p, i) => (
+              {reel.map((p, i) => (
                 <Link
                   to="/portfolio/$slug"
                   params={{ slug: p.slug }}
