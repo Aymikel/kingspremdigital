@@ -212,36 +212,61 @@ function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {PROJECTS.map((p, i) => (
-              <div
-                key={p.title}
-                className={`space-y-3 ${p.span ?? ""} ${i === 0 ? "" : ""}`}
-              >
-                <div
-                  className={`overflow-hidden bg-ink-foreground/5 ${i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"}`}
+          {featured.length === 0 ? (
+            <p className="border border-dashed border-ink-foreground/20 p-16 text-center text-ink-foreground/50">
+              Featured work is being updated — check the portfolio for our latest projects.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {featured.map((p, i) => (
+                <Link
+                  to="/portfolio/$slug"
+                  params={{ slug: p.slug }}
+                  key={p.id}
+                  className={`space-y-3 ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
                 >
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-display text-xl uppercase leading-tight">
-                      {p.title}
-                    </p>
-                    <p className="mt-1 text-xs text-ink-foreground/50">{p.desc}</p>
+                  <div
+                    className={`overflow-hidden bg-ink-foreground/5 ${i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"}`}
+                  >
+                    {p.video_url ? (
+                      <video
+                        src={p.video_url}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="h-full w-full object-cover"
+                      />
+                    ) : p.cover_url ? (
+                      <img
+                        src={p.cover_url}
+                        alt={p.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center px-4 text-center">
+                        <span className="font-display text-2xl uppercase text-ink-foreground/20">
+                          {p.title}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
-                    {p.cat}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="font-display text-xl uppercase leading-tight">
+                        {p.title}
+                      </p>
+                      <p className="mt-1 text-xs text-ink-foreground/50">{p.description}</p>
+                    </div>
+                    <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
+                      {p.service?.name ?? "Studio"}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+
 
           <div className="mt-16 text-center">
             <Link
