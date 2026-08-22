@@ -143,21 +143,24 @@ function Index() {
         </div>
 
         <div className="grid grid-cols-1 gap-px border border-foreground/5 bg-foreground/5 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <div
-              key={s.n}
+          {services.map((s, i) => (
+            <Link
+              to="/services/$slug"
+              params={{ slug: s.slug }}
+              key={s.id}
               className="group bg-background p-8 transition-colors hover:bg-foreground hover:text-background"
             >
               <span className="mb-12 block font-mono text-xs text-accent">
-                {s.n} /
+                {String(i + 1).padStart(2, "0")} /
               </span>
-              <h3 className="mb-4 font-display text-3xl uppercase">{s.title}</h3>
+              <h3 className="mb-4 font-display text-3xl uppercase">{s.name}</h3>
               <p className="mb-8 text-sm leading-relaxed opacity-80">
-                {s.desc}
+                {s.tagline ?? s.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
+
         <div className="mt-12 text-center">
           <Link
             to="/services"
