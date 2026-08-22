@@ -43,7 +43,10 @@ const BLOG = [
 ];
 
 function Index() {
+  const { services, featured, latest } = Route.useLoaderData();
+  const reel = featured.length > 0 ? featured : latest;
   return (
+
     <div className="text-foreground">
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-32">
