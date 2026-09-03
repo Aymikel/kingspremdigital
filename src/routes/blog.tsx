@@ -60,7 +60,7 @@ const POSTS = [
     read: "9 min read",
     date: "Apr 05, 2026",
     excerpt:
-      "Practical setup notes from streaming 200+ services across Ondo State.",
+      "Practical setup notes from streaming 200+ services across Nigeria.",
   },
   {
     t: "Building a Brand That Feels Nigerian and Global",

@@ -134,10 +134,10 @@ function ContactPage() {
               </div>
               <div>
                 <div className="font-display text-3xl uppercase leading-none">
-                  Akure
+                  Nigeria
                 </div>
                 <div className="mt-2 text-sm text-muted-foreground">
-                  Ondo State · Nigeria · 7.2571° N, 5.2058° E
+                  Available nationwide
                 </div>
               </div>
             </div>

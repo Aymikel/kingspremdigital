@@ -87,9 +87,9 @@ function Index() {
           </p>
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 opacity-40 grayscale">
             <div className="font-display text-3xl">RCCG CITY</div>
-            <div className="font-display text-3xl">ONDO TECH</div>
+            <div className="font-display text-3xl">TECH HUB</div>
             <div className="font-display text-3xl">ELITE BIZ</div>
-            <div className="font-display text-3xl">AKURE HUB</div>
+            <div className="font-display text-3xl">CITY HUB</div>
             <div className="font-display text-3xl">FOWA GROUP</div>
           </div>
         </div>

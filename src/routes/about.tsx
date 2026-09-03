@@ -4,7 +4,7 @@ import heroImg from "../assets/photos/camera-rig.jpg.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Kingsprem Digital, Akure" },
+      { title: "About — Kingsprem Digital" },
         {
           name: "description",
           content:
@@ -27,7 +27,7 @@ const VALUES = [
   { t: "Craft", d: "Every deliverable is measured against studio-grade quality — not client tolerance." },
   { t: "Clarity", d: "Transparent pricing, honest timelines, and briefs that leave no guesswork." },
   { t: "Consistency", d: "The same standard whether it's a small event or a multi-city campaign." },
-  { t: "Community", d: "Rooted in Akure. Invested in the growth of the region's creative scene." },
+  { t: "Community", d: "Rooted in Nigeria. Invested in the growth of the creative scene." },
 ];
 
 const TEAM = [
@@ -45,7 +45,7 @@ function AboutPage() {
           About the studio
         </span>
         <h1 className="mb-10 max-w-4xl text-balance font-display text-6xl uppercase leading-[0.9] md:text-8xl">
-          A creative media studio built in Akure, working across Nigeria.
+          A creative media studio working across Nigeria.
         </h1>
         <img
           src={heroImg.url}

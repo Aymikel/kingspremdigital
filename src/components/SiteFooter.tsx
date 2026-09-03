@@ -125,7 +125,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-6 border-t border-ink-foreground/5 pt-10 md:flex-row">
           <div className="font-mono text-[10px] uppercase tracking-widest text-ink-foreground/40">
-            © 2026 Kingsprem Digital. All rights reserved. — Akure, Nigeria
+            © 2026 Kingsprem Digital. All rights reserved.
           </div>
           <div className="flex items-center gap-3">
             <div className="size-2 animate-pulse rounded-full bg-accent" />
