@@ -21,7 +21,7 @@ export function SiteFooter() {
             <p className="max-w-sm text-sm leading-relaxed text-ink-foreground/60">
               We provide professional web design, branding, photography,
               videography, live streaming, and media equipment rental services
-              across Nigeria — from our studio in Akure, Ondo State.
+              across Nigeria.
             </p>
             <form
               onSubmit={(e) => e.preventDefault()}

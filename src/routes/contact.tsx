@@ -6,11 +6,11 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Kingsprem Digital, Akure" },
+      { title: "Contact — Kingsprem Digital" },
       {
         name: "description",
         content:
-          "Contact Kingsprem Digital in Akure, Ondo State. Get a free quote, or reach us by phone, email, or WhatsApp.",
+          "Contact Kingsprem Digital. Get a free quote, or reach us by phone, email, or WhatsApp.",
       },
       { property: "og:title", content: "Contact — Kingsprem Digital" },
       {
@@ -90,7 +90,7 @@ function ContactPage() {
             <div className="mb-1 font-mono text-xs uppercase text-accent">
               Office
             </div>
-            <div className="text-lg">Akure, Ondo State, Nigeria</div>
+            <div className="text-lg">Nigeria</div>
           </div>
           <div>
             <div className="mb-1 font-mono text-xs uppercase text-accent">

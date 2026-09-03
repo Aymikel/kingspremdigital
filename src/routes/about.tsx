@@ -5,11 +5,11 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Kingsprem Digital, Akure" },
-      {
-        name: "description",
-        content:
-          "Our story, mission, and the team behind Kingsprem Digital — a creative media studio in Akure, Ondo State.",
-      },
+        {
+          name: "description",
+          content:
+            "Our story, mission, and the team behind Kingsprem Digital — a creative media studio in Nigeria.",
+        },
       { property: "og:title", content: "About — Kingsprem Digital" },
       {
         property: "og:description",
@@ -60,15 +60,15 @@ function AboutPage() {
             Our Story
           </span>
           <h2 className="font-display text-4xl uppercase leading-tight">
-            Founded in 2018, still learning every day.
+            Built on craft. Still learning every day.
           </h2>
         </div>
         <div className="space-y-6 text-lg text-muted-foreground">
           <p>
             Kingsprem Digital started as two friends filming Sunday services on a
-            borrowed camera. Eight years later, we're a full-service creative
-            media studio serving churches, businesses, and organizations across
-            Ondo State and beyond.
+            borrowed camera. Over the years, we've grown into a full-service
+            creative media studio serving churches, businesses, and
+            organizations across Nigeria and beyond.
           </p>
           <p>
             We built the studio we wished existed here — one that treats a
