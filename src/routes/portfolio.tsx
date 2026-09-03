@@ -18,7 +18,7 @@ export const Route = createFileRoute("/portfolio")({
       { property: "og:title", content: "Portfolio — Kingsprem Digital" },
       {
         property: "og:description",
-        content: "A gallery of recent design and video projects from our Akure studio.",
+        content: "A gallery of recent design and video projects from our studio.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

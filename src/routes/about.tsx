@@ -4,12 +4,12 @@ import heroImg from "../assets/photos/camera-rig.jpg.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Kingsprem Digital, Akure" },
-      {
-        name: "description",
-        content:
-          "Our story, mission, and the team behind Kingsprem Digital — a creative media studio in Akure, Ondo State.",
-      },
+      { title: "About — Kingsprem Digital" },
+        {
+          name: "description",
+          content:
+            "Our story, mission, and the team behind Kingsprem Digital — a creative media studio in Nigeria.",
+        },
       { property: "og:title", content: "About — Kingsprem Digital" },
       {
         property: "og:description",
@@ -27,7 +27,7 @@ const VALUES = [
   { t: "Craft", d: "Every deliverable is measured against studio-grade quality — not client tolerance." },
   { t: "Clarity", d: "Transparent pricing, honest timelines, and briefs that leave no guesswork." },
   { t: "Consistency", d: "The same standard whether it's a small event or a multi-city campaign." },
-  { t: "Community", d: "Rooted in Akure. Invested in the growth of the region's creative scene." },
+  { t: "Community", d: "Rooted in Nigeria. Invested in the growth of the creative scene." },
 ];
 
 const TEAM = [
@@ -45,7 +45,7 @@ function AboutPage() {
           About the studio
         </span>
         <h1 className="mb-10 max-w-4xl text-balance font-display text-6xl uppercase leading-[0.9] md:text-8xl">
-          A creative media studio built in Akure, working across Nigeria.
+          A creative media studio working across Nigeria.
         </h1>
         <img
           src={heroImg.url}
@@ -60,15 +60,15 @@ function AboutPage() {
             Our Story
           </span>
           <h2 className="font-display text-4xl uppercase leading-tight">
-            Founded in 2018, still learning every day.
+            Built on craft. Still learning every day.
           </h2>
         </div>
         <div className="space-y-6 text-lg text-muted-foreground">
           <p>
             Kingsprem Digital started as two friends filming Sunday services on a
-            borrowed camera. Eight years later, we're a full-service creative
-            media studio serving churches, businesses, and organizations across
-            Ondo State and beyond.
+            borrowed camera. Over the years, we've grown into a full-service
+            creative media studio serving churches, businesses, and
+            organizations across Nigeria and beyond.
           </p>
           <p>
             We built the studio we wished existed here — one that treats a

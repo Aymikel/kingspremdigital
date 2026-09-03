@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 const FAQS = [
   {
     q: "Where are you based and do you travel?",
-    a: "Our studio is in Akure, Ondo State. We travel across Nigeria — Lagos, Ibadan, Abuja, and beyond. Travel costs are quoted transparently in the project brief.",
+    a: "We are based in Nigeria and travel across the country — Lagos, Ibadan, Abuja, and beyond. Travel costs are quoted transparently in the project brief.",
   },
   {
     q: "How long does a typical project take?",

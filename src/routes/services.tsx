@@ -9,12 +9,12 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Web design, graphic design, live streaming, photography, videography, and media equipment rental in Akure and across Nigeria.",
+          "Web design, graphic design, live streaming, photography, videography, and media equipment rental across Nigeria.",
       },
       { property: "og:title", content: "Services — Kingsprem Digital" },
       {
         property: "og:description",
-        content: "Six integrated media services from a single studio in Akure.",
+        content: "Six integrated media services from a single studio.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

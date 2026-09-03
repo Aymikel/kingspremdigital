@@ -21,7 +21,7 @@ export function SiteFooter() {
             <p className="max-w-sm text-sm leading-relaxed text-ink-foreground/60">
               We provide professional web design, branding, photography,
               videography, live streaming, and media equipment rental services
-              across Nigeria — from our studio in Akure, Ondo State.
+              across Nigeria.
             </p>
             <form
               onSubmit={(e) => e.preventDefault()}
@@ -125,7 +125,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-6 border-t border-ink-foreground/5 pt-10 md:flex-row">
           <div className="font-mono text-[10px] uppercase tracking-widest text-ink-foreground/40">
-            © 2026 Kingsprem Digital. All rights reserved. — Akure, Nigeria
+            © 2026 Kingsprem Digital. All rights reserved.
           </div>
           <div className="flex items-center gap-3">
             <div className="size-2 animate-pulse rounded-full bg-accent" />

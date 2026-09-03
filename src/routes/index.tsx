@@ -51,9 +51,6 @@ function Index() {
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-32">
         <div className="animate-reveal">
-          <span className="mb-6 block font-mono text-xs uppercase tracking-widest text-accent">
-            Akure, Ondo State — Est. 2018
-          </span>
           <h1 className="mb-8 text-balance font-display text-6xl leading-[0.9] tracking-tighter uppercase md:text-8xl lg:text-9xl">
             Creative Media <span className="text-accent">Solutions</span> That
             Bring Your Ideas to Life
@@ -90,9 +87,9 @@ function Index() {
           </p>
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 opacity-40 grayscale">
             <div className="font-display text-3xl">RCCG CITY</div>
-            <div className="font-display text-3xl">ONDO TECH</div>
+            <div className="font-display text-3xl">TECH HUB</div>
             <div className="font-display text-3xl">ELITE BIZ</div>
-            <div className="font-display text-3xl">AKURE HUB</div>
+            <div className="font-display text-3xl">CITY HUB</div>
             <div className="font-display text-3xl">FOWA GROUP</div>
           </div>
         </div>
@@ -105,14 +102,14 @@ function Index() {
             Who We Are
           </span>
           <h2 className="font-display text-5xl uppercase leading-none md:text-6xl">
-            A creative media company built in Akure.
+            A creative media company built for impact.
           </h2>
         </div>
         <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
           <p>
-            We are a creative media company based in Akure, Ondo State,
-            dedicated to helping brands communicate effectively through
-            innovative design, digital technology, and visual storytelling.
+            We are a creative media company dedicated to helping brands
+            communicate effectively through innovative design, digital
+            technology, and visual storytelling.
           </p>
           <p>
             Our mission is to provide affordable, professional, and high-quality
@@ -447,7 +444,7 @@ function Index() {
               <div className="mb-1 font-mono text-xs uppercase text-accent">
                 Office
               </div>
-              <div className="text-lg">Akure, Ondo State, Nigeria</div>
+              <div className="text-lg">Nigeria</div>
             </div>
             <div>
               <div className="mb-1 font-mono text-xs uppercase text-accent">
