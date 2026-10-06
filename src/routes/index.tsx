@@ -52,14 +52,10 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-32">
         <div className="animate-reveal">
           <h1 className="mb-8 text-balance font-display text-6xl leading-[0.9] tracking-tighter uppercase md:text-8xl lg:text-9xl">
-            Creative Media <span className="text-accent">Solutions</span> That
-            Bring Your Ideas to Life
+            CREATIVE&nbsp;<span className="text-accent">SOLUTIONS</span> THAT BRING YOUR IDEAS TO LIFE
           </h1>
           <p className="mb-10 max-w-2xl text-pretty text-lg font-medium leading-relaxed text-muted-foreground md:text-xl">
-            We help businesses, churches, organizations, and individuals create
-            outstanding digital experiences through web design, branding, live
-            streaming, photography, videography, and professional media
-            equipment rental.
+            We help businesses, churches, organizations, and individuals build stronger brands through branding, graphic design, video editing, web design, event media, live streaming, and business registration services.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
