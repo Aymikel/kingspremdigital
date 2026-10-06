@@ -75,21 +75,6 @@ function Index() {
 
       </section>
 
-      {/* Trust */}
-      <section className="border-y border-foreground/5 bg-secondary py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 px-6 md:flex-row">
-          <p className="max-w-sm font-display text-2xl uppercase leading-none">
-            Trusted by businesses, churches &amp; organizations
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 opacity-40 grayscale">
-            <div className="font-display text-3xl">RCCG CITY</div>
-            <div className="font-display text-3xl">TECH HUB</div>
-            <div className="font-display text-3xl">ELITE BIZ</div>
-            <div className="font-display text-3xl">CITY HUB</div>
-            <div className="font-display text-3xl">FOWA GROUP</div>
-          </div>
-        </div>
-      </section>
 
       {/* About */}
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-2">
