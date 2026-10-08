@@ -105,6 +105,7 @@ function Index() {
             Learn more about the studio <ArrowRight size={14} />
           </Link>
         </div>
+        </div>
       </section>
 
       {/* Services */}
