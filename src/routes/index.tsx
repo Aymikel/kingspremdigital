@@ -77,7 +77,8 @@ function Index() {
 
 
       {/* About */}
-      <section className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-2">
+      <section className="bg-secondary mx-auto max-w-none px-6 py-24">
+        <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-2">
         <div>
           <span className="mb-4 block font-mono text-xs uppercase tracking-widest text-accent">
             Who We Are
